@@ -9,6 +9,8 @@ public class WayPointAux : MonoBehaviour
     // Carrega os waypoint ao iniciar
     void Awake()
     {
+        Debug.Log("Load Grid");
+
         LoadWayPoints();
 
         // Se está executando o jogo então desabilita os objetos de waypoint
