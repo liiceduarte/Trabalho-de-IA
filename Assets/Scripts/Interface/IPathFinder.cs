@@ -9,5 +9,5 @@ public interface IPathFinder
     /// </summary>
     /// <param name="destination"></param>
     /// <returns></returns>
-    Vector3[] GetPathTo(WayPoint destination);
+    List<Vector3> GetPathFromTo(int originIndex, int destinationIndex);
 }

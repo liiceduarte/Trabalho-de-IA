@@ -8144,6 +8144,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f6250f30d0e9f48937378d82aa2308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &397810102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5841250685719375678, guid: abcdfd587157e424c83cc302d580f417, type: 3}
+  m_PrefabInstance: {fileID: 1538624703839818014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &397810105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397810102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0177856508c6e844db4d76568a69f582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &399567226
 GameObject:
   m_ObjectHideFlags: 0
@@ -14291,7 +14308,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 8e-45, z: 8.381e-42, w: 1.05e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -14871,7 +14888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EditorStyle: 1
-  DistanceBetweenVertices: 5
+  DistanceBetweenVertices: 4.84375
   GridSize: 32
   LayerMaskCollision:
     serializedVersion: 2
