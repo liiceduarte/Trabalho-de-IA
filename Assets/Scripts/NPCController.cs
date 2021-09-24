@@ -87,6 +87,7 @@ public class NPCController : MonoBehaviour
             pathFinder = GetComponent<IPathFinder>();
         }
 
+
         path = pathFinder.GetPathFromTo(currentWaypointIndex, targetIndex);
         this.dust = dust;
 
@@ -153,6 +154,7 @@ public class NPCController : MonoBehaviour
                 cleaningTimer = 0;
                 state = State.CLEANING;
             }
+            UpdateWaypointIndex();
         }
         else
         {
@@ -170,5 +172,63 @@ public class NPCController : MonoBehaviour
             state = State.IDDLE;
             SceneController.instance.RobotFinishedClearing(this);
         }
+    }
+
+    // desena o caminho encontrado ao selecionar um robo
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        foreach(Vector3 vertice in path)
+        {
+            Gizmos.DrawSphere(vertice, 1);
+        }
+
+        Gizmos.color = Color.red;
+        for(int i = 0; i < path.Count - 1; i++)
+        {
+            Gizmos.DrawLine(path[i], path[i + 1]);
+        }
+    }
+
+    public void UpdateWaypointIndex()
+    {
+        int closestWaypoint = GetClosestWaypoint();
+        currentWaypointIndex = closestWaypoint;
+    }
+
+    /// <summary>
+    /// Busca o waypoint mais próximo
+    /// </summary>
+    /// <returns></returns>
+    private int GetClosestWaypoint()
+    {
+        int closer = 0;
+        Vector3 closestPosition = Vector3.zero;
+        Vector3 auxPosition = Vector3.zero;
+        while(!mapGrid.GetVertexAvailabity((int)closestPosition.x, (int)closestPosition.y))
+        {
+            closer++;
+            closestPosition.x = closer % mapGrid.GridSize;
+            closestPosition.y = closer / mapGrid.GridSize;
+        }
+        
+        for(int i = 0; i < mapGrid.GridSize * mapGrid.GridSize; i++)
+        {
+            auxPosition.x = i % mapGrid.GridSize;
+            auxPosition.y = i / mapGrid.GridSize;
+            if (mapGrid.GetVertexAvailabity((int)auxPosition.x, (int)auxPosition.y))
+            {
+                if(Vector3.Distance(transform.position, mapGrid.GetVertexPosition((int)closestPosition.x, (int)closestPosition.y)) >
+                   Vector3.Distance(transform.position, mapGrid.GetVertexPosition((int)auxPosition.x, (int)auxPosition.y)))
+                {
+                    closer = i;
+                    closestPosition = auxPosition;
+                }
+            }
+            
+        }
+
+        
+        return closer;
     }
 }

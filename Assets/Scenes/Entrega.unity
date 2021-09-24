@@ -293,7 +293,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.5904e-41, y: 0, z: 0, w: 9.403955e-38}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: -1.45660855e-27, z: 4.5904e-41, w: 9.403955e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -786,7 +786,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: maxNPCAmount
-      value: 10
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1325018423871943182, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: m_Name
@@ -1186,6 +1186,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046585990817169088, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206800048618652227, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206800048618652227, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206800048618652227, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206800048618652227, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206800048618652227, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206800048618652227, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
