@@ -147,6 +147,9 @@ public class WayPointGrid : MonoBehaviour
     // Atualiza as informações do vértice
     public void UpdateVertex(int index, Vector3 position, bool enabled)
     {
+        if (VertexPositions == null || VertexAvailability == null)
+            return;
+
         // Convertendo indice de vetor para matriz
         int xIndex = index % GridSize;
         int zIndex = index / GridSize;
@@ -159,6 +162,9 @@ public class WayPointGrid : MonoBehaviour
     // Atualiza a disponibilidade de navegação do vértice
     public void UpdateVertexAvailability(int index, bool enabled)
     {
+        if (VertexPositions == null || VertexAvailability == null)
+            return;
+
         // Convertendo indice de vetor para matriz
         int xIndex = index % GridSize;
         int zIndex = index / GridSize;
@@ -170,6 +176,9 @@ public class WayPointGrid : MonoBehaviour
     // Atualiza a posição do vértice
     public void UpdateVertexPosition(int index, Vector3 position)
     {
+        if (VertexPositions == null || VertexAvailability == null)
+            return;
+
         // Convertendo indice de vetor para matriz
         int xIndex = index % GridSize;
         int zIndex = index / GridSize;
