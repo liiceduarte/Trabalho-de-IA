@@ -157,6 +157,7 @@ public class NPCController : MonoBehaviour
         else
         {
             transform.position += (path[currentTargetIndex] - transform.position).normalized * moveSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation((path[currentTargetIndex] - transform.position).normalized, transform.up);
         }
 
     }
