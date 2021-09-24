@@ -10,4 +10,5 @@ public interface IPathFinder
     /// <param name="destination"></param>
     /// <returns></returns>
     List<Vector3> GetPathFromTo(int originIndex, int destinationIndex);
+    void UpdateMapGridInfo(WayPointGrid mapGrid);
 }
