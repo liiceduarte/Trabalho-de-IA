@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7634186741169496311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077568667496497495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eec2ba3ac2959a46a03336d851ddb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &8139860205609871646
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008609304177691834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dddda04b2850894f94b8ff1950ba4bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5603968045032877673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53,10 +84,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841250685719375678, guid: abcdfd587157e424c83cc302d580f417, type: 3}
       propertyPath: m_Name
-      value: NPC RoboVarredor
+      value: NPC Vacuum_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abcdfd587157e424c83cc302d580f417, type: 3}
+--- !u!1 &2077568667496497495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5841250685719375678, guid: abcdfd587157e424c83cc302d580f417, type: 3}
+  m_PrefabInstance: {fileID: 5603968045032877673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7968935879184761765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2545118502226718156, guid: abcdfd587157e424c83cc302d580f417, type: 3}
@@ -119,3 +155,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 966100b106075de46bf36d884fb074a5, type: 3}
+--- !u!1 &9008609304177691834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1665571481929230469, guid: 966100b106075de46bf36d884fb074a5, type: 3}
+  m_PrefabInstance: {fileID: 7644946260493067327}
+  m_PrefabAsset: {fileID: 0}
