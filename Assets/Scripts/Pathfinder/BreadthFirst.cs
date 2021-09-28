@@ -34,8 +34,7 @@ public class BreadthFirst : MonoBehaviour, IPathFinder
         node.index = originIndex;
         node.parentNode = -1;
         notVisiteds.Enqueue(node);
-        visiteds = null;
-
+        
         // visiteds < gridPow é flag para quebrar em caso de erro de código
         while (!found && notVisiteds.Count > 0 && visiteds.Count < gridPow)
         {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -786,12 +786,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: maxNPCAmount
-      value: 26
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: npcPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 5992085925580253396, guid: 85725e3aa997a874f83792acae059344, type: 3}
+      objectReference: {fileID: 2077568667496497495, guid: f827e7de66ac73e488c7bececf20e436, type: 3}
     - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: dustPrefabs.Array.data[0]
       value: 
