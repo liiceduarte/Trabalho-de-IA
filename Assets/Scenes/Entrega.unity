@@ -786,8 +786,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: maxNPCAmount
-      value: 200
+      value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: npcPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 5992085925580253396, guid: 85725e3aa997a874f83792acae059344, type: 3}
+    - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: dustPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7101595381060542045, guid: 3c2e05361dddde24fa7e26c91ab4b272, type: 3}
+    - target: {fileID: 498697746888413724, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
+      propertyPath: dustPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5988892229841186565, guid: e25d70e37a320f84692852df3bb3c0ab, type: 3}
     - target: {fileID: 1325018423871943182, guid: 641a8ddf08839fa46be9f4d14324431d, type: 3}
       propertyPath: m_Name
       value: Core
