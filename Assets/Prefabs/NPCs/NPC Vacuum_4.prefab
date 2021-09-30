@@ -24,6 +24,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2545118502226718156, guid: abcdfd587157e424c83cc302d580f417, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545118502226718156, guid: abcdfd587157e424c83cc302d580f417, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545118502226718156, guid: abcdfd587157e424c83cc302d580f417, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545118502226718156, guid: abcdfd587157e424c83cc302d580f417, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -86,10 +98,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3545267919062616301}
     m_Modifications:
+    - target: {fileID: 3143276251139962154, guid: 26c3b9c4fda965449b6f9e836b9c57c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3d999eb61631b84aae35b3ff2f0c258, type: 2}
     - target: {fileID: 5276973008799662902, guid: 26c3b9c4fda965449b6f9e836b9c57c4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ae87f91660e2984c8133c9b75f01b33, type: 2}
+      objectReference: {fileID: 2100000, guid: c3d999eb61631b84aae35b3ff2f0c258, type: 2}
     - target: {fileID: 8525433209693781715, guid: 26c3b9c4fda965449b6f9e836b9c57c4, type: 3}
       propertyPath: m_Name
       value: Vacuum_2
