@@ -45206,9 +45206,17 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 133677364728348869, guid: 27d286afc8791db43aec3e6ca4ec5af5, type: 3}
+      propertyPath: npcPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 133677364728348869, guid: 27d286afc8791db43aec3e6ca4ec5af5, type: 3}
       propertyPath: dustPrefabs.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 133677364728348869, guid: 27d286afc8791db43aec3e6ca4ec5af5, type: 3}
+      propertyPath: npcPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4859677724024818207, guid: dd55562f83549784bbea08911e67d10e, type: 3}
     - target: {fileID: 133677364728348869, guid: 27d286afc8791db43aec3e6ca4ec5af5, type: 3}
       propertyPath: dustPrefabs.Array.data[0]
       value: 
