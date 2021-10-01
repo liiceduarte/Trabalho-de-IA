@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4591011475263347006}
   - component: {fileID: 583593325183850139}
   - component: {fileID: 3458096287286534737}
+  - component: {fileID: 8061171588312871143}
   m_Layer: 0
   m_Name: RChair
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8061171588312871143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818309421723812740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4468536, y: 3.0949693, z: 4.036613}
+  m_Center: {x: -0.002424121, y: 0.020140288, z: 2.0326045}

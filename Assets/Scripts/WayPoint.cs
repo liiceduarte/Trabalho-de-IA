@@ -20,6 +20,9 @@ public class WayPoint : MonoBehaviour
 
         Debug.Log("Vertice Habilitado");
 
+        if (transform.parent == null)
+            return;
+
         transform.parent.parent.GetComponent<WayPointGrid>().UpdateVertexAvailability(index, true);
     }
 
@@ -31,12 +34,18 @@ public class WayPoint : MonoBehaviour
 
         Debug.Log("Vertice desabilitado");
 
+        if (transform.parent == null)
+            return;
+
         transform.parent.parent.GetComponent<WayPointGrid>().UpdateVertexAvailability(index, false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (transform.parent == null)
+            return;
+
         if (transform.hasChanged == false || LastPosition == transform.position)
             return;
 

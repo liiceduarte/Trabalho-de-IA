@@ -67,6 +67,14 @@ public class WayPointGrid : MonoBehaviour
         float offset = gridSize * distanceBetweenVertices * 0.5f;
         Vector3 currentPosition = transform.position - new Vector3(offset, 0.0f, offset);
 
+        while (gridEditorAux.childCount > 0)
+        {
+            Transform child = gridEditorAux.GetChild(0);
+            child.parent = null;
+
+            GameObject.DestroyImmediate(child.gameObject);
+        }
+
         // Cria todos os vértices do grid de navegação
         for (int z = 0; z < GridSize; z++)
         {
