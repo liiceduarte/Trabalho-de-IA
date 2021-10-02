@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6390513998135990492}
   - component: {fileID: 7998517226795800441}
   - component: {fileID: 5252470691417121715}
+  - component: {fileID: 4260090420148758968}
   m_Layer: 0
   m_Name: CamadeCasal
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4260090420148758968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045090963288670822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6925273, y: 3.830657, z: 1.3413821}
+  m_Center: {x: 0.02037251, y: 0.008759618, z: 0.29145265}
