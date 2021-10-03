@@ -13,11 +13,6 @@ public class CameraHandler : MonoBehaviour
         currentCameraSpot = 0;
     }
 
-    private void Start()
-    {
-        SwapCamera(0);
-    }
-
     /// <summary>
     /// Troca o spot atual da câmera para a posição sugerida
     /// </summary>

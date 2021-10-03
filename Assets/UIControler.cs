@@ -19,7 +19,37 @@ public class UIControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            cameraHandler.SwapCamera(0);
+            UpdateButtons();
+        }else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            cameraHandler.SwapCamera(1);
+            UpdateButtons();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            cameraHandler.SwapCamera(2);
+            UpdateButtons();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            cameraHandler.SwapCamera(3);
+            UpdateButtons();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            cameraHandler.SwapCamera(4);
+            UpdateButtons();
+        }else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextCamera();
+        }else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PrevCamera();
+        }
+
     }
 
     public void UpdateButtons()
