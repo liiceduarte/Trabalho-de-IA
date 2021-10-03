@@ -13,6 +13,11 @@ public class CameraHandler : MonoBehaviour
         currentCameraSpot = 0;
     }
 
+    private void Start()
+    {
+        SwapCamera(0);
+    }
+
     /// <summary>
     /// Troca o spot atual da câmera para a posição sugerida
     /// </summary>
@@ -30,7 +35,7 @@ public class CameraHandler : MonoBehaviour
     public void NextCamera()
     {
         int nextCamera = currentCameraSpot + 1;
-        if(currentCameraSpot >= cameraSpots.Count)
+        if(nextCamera >= cameraSpots.Count)
         {
             nextCamera = 0;
         }
@@ -44,7 +49,7 @@ public class CameraHandler : MonoBehaviour
     public void PrevCamera()
     {
         int nextCamera = currentCameraSpot - 1;
-        if (currentCameraSpot < 0)
+        if (nextCamera < 0)
         {
             nextCamera = cameraSpots.Count - 1;
         }
