@@ -11,9 +11,9 @@ public class ResourceStateMachine : MonoBehaviour
     [SerializeField] Color deliverColor;
     [SerializeField] Color fleeingColor;
     [SerializeField] Color healingColor;
-    [SerializeField] MeshRenderer meshRenderer;
 
     [SerializeField] Color battleColor;
+    private Color stateColor;
 
     enum State{
         MINE,
@@ -28,7 +28,7 @@ public class ResourceStateMachine : MonoBehaviour
     private void StartMineState(){
         currentState = State.MINE;
         resourceAgent.ClearTargetResource();
-        meshRenderer.material.color = miningColor;
+        stateColor = miningColor;
 
         Resource.ResourceType typeRequired = resourceAgent.RequestResource();
         resourceAgent.SetResource(typeRequired);
@@ -36,25 +36,25 @@ public class ResourceStateMachine : MonoBehaviour
 
     private void StartDeliverState(){
         currentState = State.DELIVER;
-        meshRenderer.material.color = deliverColor;
+        stateColor = deliverColor;
     }
 
     private void StartBattleState(){
         if(enemyTransform != null){
             currentState = State.BATTLE;
-            meshRenderer.material.color = battleColor;
+            stateColor = battleColor;
         }
 
     }
 
     private void StartFleeingState(){
         currentState = State.FLEEING_TO_BASE;
-        meshRenderer.material.color = fleeingColor;
+        stateColor = fleeingColor;
     }
 
     private void StartHealState(){
         currentState = State.HEAL;
-        meshRenderer.material.color = healingColor;
+        stateColor = healingColor;
     }
 
 
@@ -211,5 +211,10 @@ public class ResourceStateMachine : MonoBehaviour
                     StartMineState();
                 break;
         }
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = stateColor;
+        Gizmos.DrawSphere(transform.position + Vector3.up * 5, 3);
     }
 }

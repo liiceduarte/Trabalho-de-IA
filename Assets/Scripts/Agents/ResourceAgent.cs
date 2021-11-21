@@ -16,6 +16,7 @@ public class ResourceAgent : MonoBehaviour
     [SerializeField] float attackRange = 6;
     [SerializeField] float baseMinDistance = 8;
     [SerializeField] float attackDelay = 2;
+    [SerializeField] Animator animator;
     [SerializeField] BaseController baseController;
     [SerializeField] NavMeshAgent navMeshAgent;
 
@@ -94,9 +95,14 @@ public class ResourceAgent : MonoBehaviour
 
         if(Vector3.Distance(transform.position, resourceSpawn.transform.position) >= attackRange){
             navMeshAgent.SetDestination(resourceSpawn.transform.position);
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsAttacking", false);
         }else{
             navMeshAgent.SetDestination(transform.position);
             resourceTimer += Time.deltaTime;
+
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsAttacking", true);
 
             if(resourceTimer >= miningDelay){
                 collectedResource = resourceSpawn.SpawnResource();
@@ -109,6 +115,8 @@ public class ResourceAgent : MonoBehaviour
 
     public void DeliverResource(){
         navMeshAgent.SetDestination(baseController.transform.position);
+        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsAttacking", false);
 
         if(Vector3.Distance(transform.position, baseController.transform.position) < baseMinDistance){
             baseController.ReceiveResource(collectedResource);
@@ -126,6 +134,8 @@ public class ResourceAgent : MonoBehaviour
 
     public void GoToBase(){
         navMeshAgent.SetDestination(baseController.transform.position);
+        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsAttacking", false);
 
         if(Vector3.Distance(transform.position, baseController.transform.position) < baseMinDistance){
             navMeshAgent.SetDestination(transform.position);
@@ -145,6 +155,9 @@ public class ResourceAgent : MonoBehaviour
     }
 
     public void Heal(){
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsAttacking", false);
+        
         currentHealth = Mathf.Clamp(currentHealth + healingFactor * Time.deltaTime, 0, maxHealth);
         if(OnHealthChanged != null){
             OnHealthChanged(currentHealth);
@@ -158,8 +171,12 @@ public class ResourceAgent : MonoBehaviour
     public void AttackTarget(Transform target){
         if(Vector3.Distance(transform.position, target.position) >= attackRange){
             navMeshAgent.SetDestination(target.position);
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsAttacking", false);
         }else{
             navMeshAgent.SetDestination(transform.position);
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsAttacking", true);
             attackTimer += Time.deltaTime;
 
             if(attackTimer >= attackDelay){
