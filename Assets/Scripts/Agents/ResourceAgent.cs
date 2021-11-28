@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ResourceAgent : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class ResourceAgent : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] BaseController baseController;
     [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] Image miningIcon;
+    [SerializeField] GameObject miningIconGO;
+    [SerializeField] AudioClip miningSound;
+    [SerializeField] AudioSource audioSource;
 
     // eventos
     public System.Action<Transform> OnEnemyFound;
@@ -97,13 +102,17 @@ public class ResourceAgent : MonoBehaviour
             navMeshAgent.SetDestination(resourceSpawn.transform.position);
             animator.SetBool("IsWalking", true);
             animator.SetBool("IsAttacking", false);
+            miningIconGO.SetActive(false);
         }else{
+            miningIconGO.SetActive(true);
             navMeshAgent.SetDestination(transform.position);
             resourceTimer += Time.deltaTime;
+            if(resourceTimer > miningDelay)
+                resourceTimer = miningDelay;
 
             animator.SetBool("IsWalking", true);
             animator.SetBool("IsAttacking", true);
-
+            miningIcon.fillAmount = resourceTimer/miningDelay;
             if(resourceTimer >= miningDelay){
                 collectedResource = resourceSpawn.SpawnResource();
                 if(OnResourceCollected != null){
@@ -114,6 +123,7 @@ public class ResourceAgent : MonoBehaviour
     }
 
     public void DeliverResource(){
+        miningIconGO.SetActive(false);
         navMeshAgent.SetDestination(baseController.transform.position);
         animator.SetBool("IsWalking", true);
         animator.SetBool("IsAttacking", false);
@@ -133,6 +143,7 @@ public class ResourceAgent : MonoBehaviour
     }
 
     public void GoToBase(){
+        miningIconGO.SetActive(false);
         navMeshAgent.SetDestination(baseController.transform.position);
         animator.SetBool("IsWalking", true);
         animator.SetBool("IsAttacking", false);
@@ -157,6 +168,7 @@ public class ResourceAgent : MonoBehaviour
     public void Heal(){
         animator.SetBool("IsWalking", false);
         animator.SetBool("IsAttacking", false);
+        miningIconGO.SetActive(false);
         
         currentHealth = Mathf.Clamp(currentHealth + healingFactor * Time.deltaTime, 0, maxHealth);
         if(OnHealthChanged != null){
@@ -169,6 +181,7 @@ public class ResourceAgent : MonoBehaviour
     }
 
     public void AttackTarget(Transform target){
+        miningIconGO.SetActive(false);
         if(Vector3.Distance(transform.position, target.position) >= attackRange){
             navMeshAgent.SetDestination(target.position);
             animator.SetBool("IsWalking", true);
@@ -198,6 +211,14 @@ public class ResourceAgent : MonoBehaviour
         LookAroundAngle();
         if(Input.GetKeyDown(KeyCode.K)){
             TakeDamage(5);
+        }
+    }
+
+    public void Mine(){
+        if(miningSound != null){
+            audioSource.clip = miningSound;
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
+            audioSource.Play();
         }
     }
 }

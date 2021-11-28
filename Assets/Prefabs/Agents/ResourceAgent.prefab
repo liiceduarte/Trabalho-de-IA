@@ -164,6 +164,8 @@ GameObject:
   - component: {fileID: 9069835153174366138}
   - component: {fileID: 7682067010040845386}
   - component: {fileID: 2275270090472542136}
+  - component: {fileID: 3486761485759229627}
+  - component: {fileID: 6317912044283591448}
   m_Layer: 9
   m_Name: ResourceAgent
   m_TagString: Resource Agent
@@ -259,9 +261,13 @@ MonoBehaviour:
   attackRange: 6
   baseMinDistance: 8
   attackDelay: 2
-  animator: {fileID: 8893398025122979729}
+  animator: {fileID: 3486761485759229627}
   baseController: {fileID: 0}
   navMeshAgent: {fileID: 1031752252241859297}
+  miningIcon: {fileID: 675023007653188177}
+  miningIconGO: {fileID: 1543920514056080370}
+  miningSound: {fileID: 8300000, guid: b6d359eb081c6304f87a62d8a5119144, type: 3}
+  audioSource: {fileID: 6317912044283591448}
 --- !u!114 &2275270090472542136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +287,121 @@ MonoBehaviour:
   fleeingColor: {r: 0.94783044, g: 1, b: 0.0141509175, a: 1}
   healingColor: {r: 0.4481132, g: 1, b: 0.6453028, a: 1}
   battleColor: {r: 0.9339623, g: 0.19824673, b: 0.19824673, a: 1}
+--- !u!95 &3486761485759229627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422044348102904616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 464af5b7f7c3aa141bbc0dc0cfd9d6d9, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7fa8ba1158c05f448a6cf383ef38f009, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &6317912044283591448
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422044348102904616}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 0.68
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &422044349152464736
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +445,7 @@ GameObject:
   - component: {fileID: 8502340106213534673}
   - component: {fileID: 2019351682554282263}
   m_Layer: 5
-  m_Name: Bar BG (1)
+  m_Name: Mining Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +599,7 @@ GameObject:
   - component: {fileID: 3221857666355382330}
   - component: {fileID: 5732145924680592483}
   m_Layer: 5
-  m_Name: Bar BG
+  m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,8 +784,8 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7598136908961839465}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 464af5b7f7c3aa141bbc0dc0cfd9d6d9, type: 3}
   m_Controller: {fileID: 9100000, guid: 7fa8ba1158c05f448a6cf383ef38f009, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -806,13 +927,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2766e69b61c7a75468c2228fa664d101, type: 3}
---- !u!1 &7598136908961839465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1920063876250278595, guid: 2766e69b61c7a75468c2228fa664d101, type: 3}
-  m_PrefabInstance: {fileID: 8347262133267948458}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7077919116228830163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1292180427708383353, guid: 2766e69b61c7a75468c2228fa664d101, type: 3}
+  m_PrefabInstance: {fileID: 8347262133267948458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7598136908961839465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1920063876250278595, guid: 2766e69b61c7a75468c2228fa664d101, type: 3}
   m_PrefabInstance: {fileID: 8347262133267948458}
   m_PrefabAsset: {fileID: 0}
