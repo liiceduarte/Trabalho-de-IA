@@ -5,24 +5,39 @@ using UnityEngine.AI;
 
 public class EnemyAgent : MonoBehaviour
 {
-    [SerializeField] float maxHealth;
-    [SerializeField] NavMeshAgent navMeshAgent;
-    
+    // configurações
     [SerializeField] float raycastRadius = 20;
     
     [SerializeField] float AngleVisibility = 45.0f;
-    private Vector3 walkPosition;
-    private ResourceAgent target;
-    private float currentHealth;
+    [SerializeField] float maxHealth = 100;
+    [SerializeField] float attackPower = 5;
+    [SerializeField] float attackRange = 6;
+    [SerializeField] float attackDelay = 2;
+    [SerializeField] Animator animator;
+    [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] AudioSource audioSource;
 
-    protected enum ENEMY_STATE{
+
+    // eventos
+    public System.Action OnEnemyLost;
+    public System.Action OnDied;
+
+
+    // variaveis
+    private float currentHealth;
+    private ResourceAgent target;
+    private float attackTimer = 0;
+    private Vector3 spawnPosition;
+
+    protected enum ENEMY_STATE
+    {
         PATROL, BATTLE
     }
 
     protected ENEMY_STATE currentState = ENEMY_STATE.PATROL;
-    // Start is called before the first frame update
     
-    void LookAroundAngle(){
+    void LookAroundAngle()
+    {
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, raycastRadius);
         for (int i = 0; i < colliders.Length; i++)
@@ -40,6 +55,42 @@ public class EnemyAgent : MonoBehaviour
             }
         }
     }
+    public void TakeDamge(float amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+
+            if (OnDied != null)
+            {
+                OnDied();
+            }
+        }
+    }
+
+    public void AttackTarget(Transform target)
+    {
+        if (Vector3.Distance(transform.position, target.position) >= attackRange)
+        {
+            navMeshAgent.SetDestination(target.position);
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsAttacking", false);
+        }
+        else
+        {
+            navMeshAgent.SetDestination(transform.position);
+            animator.SetBool("IsWalking", true);
+            animator.SetBool("IsAttacking", true);
+            attackTimer += Time.deltaTime;
+
+            if (attackTimer >= attackDelay)
+            {
+                target.GetComponent<ResourceAgent>().TakeDamage(attackPower);
+                attackTimer = 0;
+            }
+        }
+    }
 
     void Start()
     {
@@ -50,34 +101,34 @@ public class EnemyAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(currentState){
+        switch(currentState)
+        {
             case ENEMY_STATE.PATROL:
-                LookAroundAngle();
-                navMeshAgent.SetDestination(walkPosition);
-                if(Vector3.Distance(transform.position, walkPosition) <= 1){
-                    SetRandomPosition();
-                }
-                break;
-            case ENEMY_STATE.BATTLE:
+                    LookAroundAngle();
+                    navMeshAgent.SetDestination(spawnPosition);
 
-                if(target == null){
-                    currentState = ENEMY_STATE.PATROL;
-                }else{
-                    // TODO attack
-                }
-                break;
+                    if(Vector3.Distance(transform.position, spawnPosition) <= 1)
+                    {
+                        SetRandomPosition();
+                    }
+                    break;
+                case ENEMY_STATE.BATTLE:
+
+                    if(target == null)
+                    {
+                        currentState = ENEMY_STATE.PATROL;
+                    }
+                    else
+                    {
+                        
+                    }
+                    break;
         }
     }
 
-    private void SetRandomPosition(){
-
-        walkPosition = new Vector3(Random.Range(-5, 5),0, Random.Range(-5, 5));
+    private void SetRandomPosition()
+    {
+        spawnPosition = new Vector3(Random.Range(-5, 5),0, Random.Range(-5, 5));
     }
 
-    public void TakeDamge(float amount){
-        currentHealth -= amount;
-        if(currentHealth <= 0){
-            Destroy(gameObject);
-        }
-    }
 }

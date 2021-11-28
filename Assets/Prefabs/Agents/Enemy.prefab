@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 2043685019160003109}
   - component: {fileID: 4858968398824087368}
   - component: {fileID: 5845012576468199697}
+  - component: {fileID: 3561514925035175004}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -110,10 +111,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a382f139d145e84693e52ba4b194184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  navMeshAgent: {fileID: 5845012576468199697}
   raycastRadius: 20
   AngleVisibility: 45
+  maxHealth: 10
+  attackPower: 5
+  attackRange: 6
+  attackDelay: 2
+  animator: {fileID: 3561514925035175004}
+  navMeshAgent: {fileID: 5845012576468199697}
+  miningIcon: {fileID: 0}
+  miningIconGO: {fileID: 0}
+  miningSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!195 &5845012576468199697
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -136,6 +145,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &3561514925035175004
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043685019160003110}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9286e7aaa6b548046bd06abf27919d90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1817103219955588515
 PrefabInstance:
   m_ObjectHideFlags: 0
