@@ -5,9 +5,12 @@ using UnityEngine;
 public class BaseController : MonoBehaviour
 {
     [SerializeField] List<ResourceSpawn> resourceSpawns;
-    private int[] resourceAmount;
+    public static BaseController instance;
+    public System.Action OnResourcesUpdate;
+    public int[] resourceAmount;
 
     private void Awake() {
+        instance = this;
         resourceAmount = new int[6];
         for(int i = 0; i < 6; i++){
             resourceAmount[i] = 0;
@@ -36,6 +39,9 @@ public class BaseController : MonoBehaviour
 
     public void ReceiveResource(Resource resource){
         resourceAmount[(int)resource.GetResourceType()]++;
+        if(OnResourcesUpdate != null){
+            OnResourcesUpdate.Invoke();
+        }
     }
 
     private Resource.ResourceType SelectResourceTarget(){
