@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class CameraButton : MonoBehaviour
 {
     [SerializeField] Text cameraText;
     [SerializeField] Button cameraButton;
+    [SerializeField] TMP_Text cameraNumber;
     private int cameraIndex;
     private UIControler uiControler;
     private CameraHandler cameraHandler;
@@ -20,6 +22,7 @@ public class CameraButton : MonoBehaviour
     public void SetCameraId(int index)
     {
         this.cameraIndex = index;
+        cameraNumber.text = (index + 1).ToString();
     }
     public void UpdateInfo(string text, bool available)
     {

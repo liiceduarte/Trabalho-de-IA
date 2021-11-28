@@ -385,3 +385,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraText: {fileID: 5539696698741623066}
   cameraButton: {fileID: 5539696699071702283}
+  cameraNumber: {fileID: 4756683802170932977}

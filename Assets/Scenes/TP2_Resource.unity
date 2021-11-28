@@ -1960,7 +1960,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0220714, y: 1}
+    m_SensorSize: {x: 1.8030303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5107,7 +5107,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0220714, y: 1}
+    m_SensorSize: {x: 1.8030303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7388,6 +7388,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
       value: 
@@ -8646,7 +8650,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0220714, y: 1}
+    m_SensorSize: {x: 1.8030303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8997,6 +9001,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
       value: 
@@ -9094,8 +9102,8 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 120
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -9755,6 +9763,10 @@ PrefabInstance:
     - target: {fileID: 3853514434606132648, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
@@ -11711,7 +11723,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0220714, y: 1}
+    m_SensorSize: {x: 1.8030303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12101,7 +12113,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0220714, y: 1}
+    m_SensorSize: {x: 1.8030303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12398,6 +12410,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
       value: 
@@ -12645,6 +12661,10 @@ PrefabInstance:
     - target: {fileID: 3853514434606132648, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
@@ -13160,6 +13180,10 @@ PrefabInstance:
     - target: {fileID: 3853514434606132648, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
@@ -13777,6 +13801,10 @@ PrefabInstance:
     - target: {fileID: 3853514434606132648, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317912044283591448, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7682067010040845386, guid: a62f7524a9dbc364cbb9b67797c634ea, type: 3}
       propertyPath: baseController
