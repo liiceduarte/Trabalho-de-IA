@@ -31,21 +31,34 @@ public class BaseController : MonoBehaviour
 
     public Resource.ResourceType GetResourceInNeed(){
         // TODO implementar lógica para definir qual recurso precisa mais
-        return Resource.ResourceType.A;
+        return SelectResourceTarget();
     }
 
     public void ReceiveResource(Resource resource){
         resourceAmount[(int)resource.GetResourceType()]++;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private Resource.ResourceType SelectResourceTarget(){
+        Resource.ResourceType selected = Resource.ResourceType.A;
+        float sum = 0;
+        float[] prob = new float[resourceAmount.Length];
+        float probSum = 0;
+        for(int i = 1; i < resourceAmount.Length; i++){
+            sum += resourceAmount[i] + 1;
+        }
+        for(int i = 1; i < resourceAmount.Length; i++){
+            prob[i] = 1 - ((resourceAmount[i]+1)/sum);
+            probSum += prob[i];
+        }
+        float rand = Random.Range(0, probSum);
+        float currentBase = 0;
+        for(int i = 1; i < prob.Length; i++){
+            if(rand > currentBase && rand <= currentBase + prob[i]){
+                selected = (Resource.ResourceType)i;
+            }
+            currentBase += prob[i];
+        }
+
+        return selected;
     }
 }
