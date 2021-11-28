@@ -64,6 +64,7 @@ public class EnemyAgent : MonoBehaviour
 
             if (OnDied != null)
             {
+                animator.SetBool("Died", true);
                 OnDied();
             }
         }
@@ -120,7 +121,8 @@ public class EnemyAgent : MonoBehaviour
                     }
                     else
                     {
-                        
+                        currentState = ENEMY_STATE.BATTLE;
+                        AttackTarget(target.transform);
                     }
                     break;
         }
