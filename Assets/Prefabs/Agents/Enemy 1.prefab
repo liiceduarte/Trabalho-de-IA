@@ -119,9 +119,6 @@ MonoBehaviour:
   attackDelay: 2
   animator: {fileID: 3561514925035175004}
   navMeshAgent: {fileID: 5845012576468199697}
-  miningIcon: {fileID: 0}
-  miningIconGO: {fileID: 0}
-  miningSound: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!195 &5845012576468199697
 NavMeshAgent:
@@ -227,6 +224,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5684589118509632000, guid: cc171a1c89e8a264aa5ffbe2ae62d2f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd3f4e3fc3d821a47bef9e6ea293ac1c, type: 2}
     - target: {fileID: 919132149155446097, guid: cc171a1c89e8a264aa5ffbe2ae62d2f5, type: 3}
       propertyPath: m_Name
       value: Ghastly-Figure Prototipo

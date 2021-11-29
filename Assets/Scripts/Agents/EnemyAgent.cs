@@ -29,6 +29,7 @@ public class EnemyAgent : MonoBehaviour
     private float attackTimer = 0;
     private Vector3 spawnPosition;
 
+
     protected enum ENEMY_STATE
     {
         PATROL, BATTLE
@@ -131,6 +132,7 @@ public class EnemyAgent : MonoBehaviour
     private void SetRandomPosition()
     {
         spawnPosition = new Vector3(Random.Range(-5, 5),0, Random.Range(-5, 5));
+        //Transform batata = new 
     }
 
 }
