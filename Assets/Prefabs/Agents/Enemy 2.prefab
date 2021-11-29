@@ -113,9 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastRadius: 20
   AngleVisibility: 45
-  maxHealth: 10
-  attackPower: 5
-  attackRange: 6
+  maxHealth: 20
+  attackPower: 3
+  attackRange: 4
   attackDelay: 2
   animator: {fileID: 9177173596481221209}
   navMeshAgent: {fileID: 2246016173624895252}
@@ -152,7 +152,7 @@ Animator:
   m_GameObject: {fileID: 5938687175023627299}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9286e7aaa6b548046bd06abf27919d90, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6582559d535a1ca45bda3fa4b7b2f94d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
