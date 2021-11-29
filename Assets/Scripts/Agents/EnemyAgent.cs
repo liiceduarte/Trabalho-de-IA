@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAgent : MonoBehaviour
 {
-    // configurações
+    // configuraï¿½ï¿½es
     [SerializeField] float raycastRadius = 20;
     
     [SerializeField] float AngleVisibility = 45.0f;
@@ -68,6 +68,7 @@ public class EnemyAgent : MonoBehaviour
                 animator.SetBool("Died", true);
                 OnDied();
             }
+            Destroy(gameObject);
         }
     }
 
@@ -97,6 +98,7 @@ public class EnemyAgent : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        
         SetRandomPosition();
     }
 
@@ -107,6 +109,7 @@ public class EnemyAgent : MonoBehaviour
         {
             case ENEMY_STATE.PATROL:
                     LookAroundAngle();
+                    animator.SetBool("IsWalking", true);
                     navMeshAgent.SetDestination(spawnPosition);
 
                     if(Vector3.Distance(transform.position, spawnPosition) <= 1)
@@ -131,8 +134,11 @@ public class EnemyAgent : MonoBehaviour
 
     private void SetRandomPosition()
     {
-        spawnPosition = new Vector3(Random.Range(-5, 5),0, Random.Range(-5, 5));
-        //Transform batata = new 
+        Vector2 targetPos = new Vector2();
+        targetPos.x = Random.Range(CreateEnemy.instance.posMin.position.x, CreateEnemy.instance.posMax.position.x);
+        targetPos.y = Random.Range(CreateEnemy.instance.posMin.position.z, CreateEnemy.instance.posMax.position.z);
+        spawnPosition = new Vector3(targetPos.x, 0, targetPos.y);
+        
     }
 
 }

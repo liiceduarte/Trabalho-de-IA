@@ -7,6 +7,9 @@ public class CreateEnemy : MonoBehaviour
     public List<Transform> PontosDeGerarInimigos = new List<Transform>();
 
     public List<GameObject> Inimigos = new List<GameObject>();
+    public static CreateEnemy instance;
+    public Transform posMin;
+    public Transform posMax;
 
     float X;
     float Y;
@@ -20,8 +23,12 @@ public class CreateEnemy : MonoBehaviour
 
         int inimigoEscolhido = Random.Range(0, Inimigos.Count);
 
-        Instantiate(Inimigos[inimigoEscolhido], PontosDeGerarInimigos[position].transform.position, Quaternion.identity);
+        Instantiate(Inimigos[inimigoEscolhido], PontosDeGerarInimigos[position].transform.position + Vector3.up, Quaternion.identity);
         
+    }
+
+    private void Awake() {
+        instance = this;
     }
 
     void Start()
